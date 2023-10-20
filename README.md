@@ -1,0 +1,2 @@
+# KusoDiamod
+This is KUSO!!!!!!!!!!!!!!
