@@ -17,8 +17,9 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 //.langをちゃんと使うのを推奨
 
 @Mod(modid = ModTagsGenerated.MODID, version = ModTagsGenerated.VERSION, name = ModTagsGenerated.MODNAME, acceptedMinecraftVersions = "[1.12.2]"
-        , dependencies = ""
-        , acceptableRemoteVersions = ModTagsGenerated.VERSION_MAJOR + "." + ModTagsGenerated.VERSION_MINOR
+		, guiFactory = ModTagsGenerated.MODGROUP + ".config.ModGuiFactory"
+		, dependencies = ""
+		, acceptableRemoteVersions = ModTagsGenerated.VERSION_MAJOR + "." + ModTagsGenerated.VERSION_MINOR
 //
 //, serverSideOnly = true //サーバーのみにする場合に必要(acceptableRemoteVersionsを*に変えないとダメ)、デバッグ時はオフにする
 )

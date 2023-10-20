@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:diamond_block"
+        },
+        "title": {
+            "translate": "adv.root.title"
+        },
+        "description": {
+            "translate": "adv.root.desc"
+        },
+        "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "criteria": {
+        "crafting_table": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

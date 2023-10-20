@@ -3,8 +3,10 @@ package kpan.kuso_diamod.util.handlers;
 import kpan.kuso_diamod.ModMain;
 import kpan.kuso_diamod.block.BlockBase;
 import kpan.kuso_diamod.block.BlockInit;
+import kpan.kuso_diamod.config.ConfigHandler;
 import kpan.kuso_diamod.item.ItemInit;
 import kpan.kuso_diamod.util.interfaces.IHasModel;
+import kpan.kuso_diamod.world.WorldTypePro;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -20,8 +22,14 @@ public class RegistryHandler {
 
 	@SuppressWarnings("InstantiationOfUtilityClass")
 	public static void preInitRegistries(@SuppressWarnings("unused") FMLPreInitializationEvent event) {
+		ConfigHandler.preInit(event);
 		MinecraftForge.EVENT_BUS.register(new RegistryHandler());
+		MinecraftForge.EVENT_BUS.register(new LivingEventHandler());
+		MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());
+		MinecraftForge.EVENT_BUS.register(WorldEventHandler.class);
+		MinecraftForge.EVENT_BUS.register(TickingHandler.class);
 		ModMain.proxy.registerOnlyClient();
+		WorldTypePro.init();
 	}
 
 	public static void initRegistries() {
